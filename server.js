@@ -12,9 +12,13 @@ app.use('/',
     proxy(function(req){
         var host;
         var hostname = host = req.hostname || '';
-        var port = conf[hostname];
+        var port = conf.settings[hostname];
         if(port){
-            host = ['http', '//127.0.0.1', port].join(':');
+            host = [
+                'http',
+                ['//', conf.target].join(''),
+                port
+            ].join(':');
         }
         console.log([hostname, host].join(' -> '));
         return host;
