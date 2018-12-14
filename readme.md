@@ -4,7 +4,10 @@
 
 ## 使用方法 ##
 
-把 conf.sample.json 复制为 conf.json，修改配置数据，键是需要处理的域名，值是指向本机的端口号。
+把 conf.sample.json 复制为 conf.json，修改配置数据：
+
+- `target`配置节配置代理转发的目标地址。
+- `settings`配置节的键是需要处理的域名，值是指向本机的端口号。
 
 在命令行中启动服务：
 
